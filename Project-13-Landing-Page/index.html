@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wander – Walk Further. Live Better.</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 28 C10 28 8 20 12 16 C14 14 16 14 18 12 C21 9 20 4 20 4" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="21" cy="6" r="3" fill="white"/>
+            <path d="M12 28 L14 22 L18 24 L22 18 L26 20" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span>Wander</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a href="#pricing" class="btn btn-primary nav-cta">Start Free</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-text animate-fade-up">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Trusted by 500,000+ walkers worldwide
+        </div>
+        <h1 class="hero-headline">
+          Walk Further.<br />
+          <span class="gradient-text">Live Better.</span>
+        </h1>
+        <p class="hero-subheadline">
+          Wander turns every step into meaningful data. Track your steps, distance, heart rate, and more — beautifully designed for athletes, seniors, and everyone in between.
+        </p>
+        <div class="hero-actions">
+          <a href="#pricing" class="btn btn-primary btn-large">Get Started Free</a>
+          <a href="#features" class="btn btn-ghost btn-large">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16"/></svg>
+            See How It Works
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">500K+</span>
+            <span class="stat-label">Active Users</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number">2.4B</span>
+            <span class="stat-label">Steps Tracked</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number">4.9★</span>
+            <span class="stat-label">App Rating</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-phone animate-fade-up delay-2">
+        <div class="phone-wrapper">
+          <div class="phone-mockup">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="app-header">
+                <div class="app-greeting">Good morning, Alex 👋</div>
+                <div class="app-date">Monday, March 16</div>
+              </div>
+              <div class="app-ring-container">
+                <div class="ring-chart">
+                  <svg viewBox="0 0 120 120" class="ring-svg">
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="8"/>
+                    <circle cx="60" cy="60" r="50" fill="none" stroke="url(#ringGrad)" stroke-width="8" stroke-linecap="round" stroke-dasharray="251" stroke-dashoffset="70" transform="rotate(-90 60 60)"/>
+                    <defs>
+                      <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#4ade80"/>
+                        <stop offset="100%" stop-color="#22d3ee"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <div class="ring-center">
+                    <span class="ring-steps">7,842</span>
+                    <span class="ring-label">steps</span>
+                  </div>
+                </div>
+                <div class="ring-goal">78% of daily goal</div>
+              </div>
+              <div class="app-metrics">
+                <div class="metric-card">
+                  <div class="metric-icon" style="background: linear-gradient(135deg,#f97316,#ef4444)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                  </div>
+                  <div class="metric-data">
+                    <span class="metric-value">84 bpm</span>
+                    <span class="metric-name">Heart Rate</span>
+                  </div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-icon" style="background: linear-gradient(135deg,#a78bfa,#6366f1)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M3 3v18h18"/><path d="M18 9l-5 5-4-4-3 3"/></svg>
+                  </div>
+                  <div class="metric-data">
+                    <span class="metric-value">5.2 km</span>
+                    <span class="metric-name">Distance</span>
+                  </div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-icon" style="background: linear-gradient(135deg,#fbbf24,#f59e0b)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                  </div>
+                  <div class="metric-data">
+                    <span class="metric-value">342 cal</span>
+                    <span class="metric-name">Calories</span>
+                  </div>
+                </div>
+              </div>
+              <div class="app-chart">
+                <div class="chart-title">Weekly Steps</div>
+                <div class="chart-bars">
+                  <div class="bar-wrap"><div class="bar" style="height:55%"></div><span>M</span></div>
+                  <div class="bar-wrap"><div class="bar" style="height:70%"></div><span>T</span></div>
+                  <div class="bar-wrap"><div class="bar" style="height:45%"></div><span>W</span></div>
+                  <div class="bar-wrap"><div class="bar" style="height:90%"></div><span>T</span></div>
+                  <div class="bar-wrap"><div class="bar" style="height:65%"></div><span>F</span></div>
+                  <div class="bar-wrap"><div class="bar bar-active" style="height:78%"></div><span>S</span></div>
+                  <div class="bar-wrap"><div class="bar" style="height:30%"></div><span>S</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="phone-glow"></div>
+          <div class="float-badge badge-steps">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            <div>
+              <span>Steps Goal</span>
+              <strong>Achieved! 🎉</strong>
+            </div>
+          </div>
+          <div class="float-badge badge-streak">
+            <span class="streak-fire">🔥</span>
+            <div>
+              <span>Day Streak</span>
+              <strong>21 Days</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="white"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header animate-fade-up">
+        <div class="section-tag">Features</div>
+        <h2 class="section-title">Everything you need to <span class="gradient-text">track your journey</span></h2>
+        <p class="section-subtitle">Comprehensive metrics designed for every type of walker — from casual strollers to marathon trainers.</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feature-card animate-fade-up">
+          <div class="feature-icon-wrap" style="--icon-color: #22c55e; --icon-bg: #dcfce7">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <h3>Step Tracking</h3>
+          <p>Real-time pedometer with intelligent motion detection. Counts every step accurately, whether you're on pavement, trails, or treadmills.</p>
+          <div class="feature-highlight">
+            <span class="highlight-dot green"></span> Live counting
+          </div>
+        </div>
+
+        <div class="feature-card animate-fade-up delay-1">
+          <div class="feature-icon-wrap" style="--icon-color: #3b82f6; --icon-bg: #dbeafe">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12,6 12,12 16,14"/>
+            </svg>
+          </div>
+          <h3>Distance & Route</h3>
+          <p>GPS-powered route mapping with precise distance measurement in km or miles. View your path on a live interactive map.</p>
+          <div class="feature-highlight">
+            <span class="highlight-dot blue"></span> GPS accuracy ±2m
+          </div>
+        </div>
+
+        <div class="feature-card animate-fade-up delay-2">
+          <div class="feature-icon-wrap" style="--icon-color: #f97316; --icon-bg: #ffedd5">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M12 2a10 10 0 1 0 10 10"/>
+              <path d="M12 6v6l4 2"/>
+              <circle cx="18" cy="6" r="3" fill="currentColor" stroke="none" opacity="0.4"/>
+              <path d="M18 4v4M16 6h4" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3>Calorie Burn</h3>
+          <p>Personalized calorie calculations based on your weight, height, age, and walking speed. See exactly how much energy you're expending.</p>
+          <div class="feature-highlight">
+            <span class="highlight-dot orange"></span> Personalized to you
+          </div>
+        </div>
+
+        <div class="feature-card animate-fade-up delay-1">
+          <div class="feature-icon-wrap" style="--icon-color: #ef4444; --icon-bg: #fee2e2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <h3>Heart Rate Monitor</h3>
+          <p>Continuous heart rate tracking with zone alerts. Stay in your optimal training zone and get notified when your BPM goes too high or low.</p>
+          <div class="feature-highlight">
+            <span class="highlight-dot red"></span> Zone alerts
+          </div>
+        </div>
+
+        <div class="feature-card animate-fade-up delay-2">
+          <div class="feature-icon-wrap" style="--icon-color: #8b5cf6; --icon-bg: #ede9fe">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+            </svg>
+          </div>
+          <h3>Elevation Gain</h3>
+          <p>Track vertical ascent and descent with barometric altimeter data. Perfect for hikers and trail walkers who love a good climb.</p>
+          <div class="feature-highlight">
+            <span class="highlight-dot purple"></span> Barometric precision
+          </div>
+        </div>
+
+        <div class="feature-card animate-fade-up delay-3">
+          <div class="feature-icon-wrap" style="--icon-color: #06b6d4; --icon-bg: #cffafe">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/>
+            </svg>
+          </div>
+          <h3>Sleep Analysis</h3>
+          <p>Monitor your sleep duration and quality to understand how rest impacts your walking performance. Wake up ready for your best walk yet.</p>
+          <div class="feature-highlight">
+            <span class="highlight-dot cyan"></span> Sleep score
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section class="pricing" id="pricing">
+    <div class="pricing-bg"></div>
+    <div class="container">
+      <div class="section-header animate-fade-up">
+        <div class="section-tag">Pricing</div>
+        <h2 class="section-title">Simple, <span class="gradient-text">transparent pricing</span></h2>
+        <p class="section-subtitle">Start free and upgrade when you're ready. No hidden fees, no surprises.</p>
+        <div class="billing-toggle">
+          <span id="toggle-monthly" class="toggle-label active">Monthly</span>
+          <button class="toggle-switch" id="billing-toggle" aria-label="Toggle billing period">
+            <span class="toggle-thumb"></span>
+          </button>
+          <span id="toggle-annual" class="toggle-label">Annual <span class="badge-save">Save 20%</span></span>
+        </div>
+      </div>
+
+      <div class="pricing-grid">
+
+        <div class="pricing-card animate-fade-up">
+          <div class="plan-header">
+            <div class="plan-icon">🚶</div>
+            <h3 class="plan-name">Free</h3>
+            <div class="plan-price">
+              <span class="price-amount" data-monthly="$0" data-annual="$0">$0</span>
+              <span class="price-period">/month</span>
+            </div>
+            <p class="plan-desc">Perfect for casual walkers getting started.</p>
+          </div>
+          <ul class="plan-features">
+            <li><span class="check">✓</span> Step & distance tracking</li>
+            <li><span class="check">✓</span> Daily step goals</li>
+            <li><span class="check">✓</span> Basic weekly reports</li>
+            <li><span class="check">✓</span> 7-day history</li>
+            <li><span class="cross">✗</span> Heart rate monitoring</li>
+            <li><span class="cross">✗</span> GPS route mapping</li>
+            <li><span class="cross">✗</span> Sleep tracking</li>
+            <li><span class="cross">✗</span> Elevation data</li>
+          </ul>
+          <a href="#" class="btn btn-outline btn-full">Get Started Free</a>
+        </div>
+
+        <div class="pricing-card pricing-popular animate-fade-up delay-1">
+          <div class="popular-badge">Most Popular</div>
+          <div class="plan-header">
+            <div class="plan-icon">🏃</div>
+            <h3 class="plan-name">Pro</h3>
+            <div class="plan-price">
+              <span class="price-amount" data-monthly="$12" data-annual="$10">$12</span>
+              <span class="price-period">/month</span>
+            </div>
+            <p class="plan-desc">For dedicated walkers who want full insights.</p>
+          </div>
+          <ul class="plan-features">
+            <li><span class="check">✓</span> Everything in Free</li>
+            <li><span class="check">✓</span> Heart rate monitoring</li>
+            <li><span class="check">✓</span> GPS route mapping</li>
+            <li><span class="check">✓</span> Sleep tracking & analysis</li>
+            <li><span class="check">✓</span> Elevation & terrain data</li>
+            <li><span class="check">✓</span> Calorie burn calculator</li>
+            <li><span class="check">✓</span> Unlimited history</li>
+            <li><span class="check">✓</span> Advanced analytics</li>
+          </ul>
+          <a href="#" class="btn btn-primary btn-full">Start Pro Free</a>
+          <p class="plan-trial">14-day free trial · No credit card required</p>
+        </div>
+
+        <div class="pricing-card animate-fade-up delay-2">
+          <div class="plan-header">
+            <div class="plan-icon">🏢</div>
+            <h3 class="plan-name">Business</h3>
+            <div class="plan-price">
+              <span class="price-amount" data-monthly="$29" data-annual="$23">$29</span>
+              <span class="price-period">/month</span>
+            </div>
+            <p class="plan-desc">For teams, clinics, and organizations.</p>
+          </div>
+          <ul class="plan-features">
+            <li><span class="check">✓</span> Everything in Pro</li>
+            <li><span class="check">✓</span> Up to 50 team members</li>
+            <li><span class="check">✓</span> Team leaderboards</li>
+            <li><span class="check">✓</span> Admin dashboard</li>
+            <li><span class="check">✓</span> Custom branding</li>
+            <li><span class="check">✓</span> API access</li>
+            <li><span class="check">✓</span> Priority support</li>
+            <li><span class="check">✓</span> Health reports export</li>
+          </ul>
+          <a href="#" class="btn btn-outline btn-full">Contact Sales</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header animate-fade-up">
+        <div class="section-tag">Testimonials</div>
+        <h2 class="section-title">Loved by walkers <span class="gradient-text">everywhere</span></h2>
+        <p class="section-subtitle">From competitive athletes to seniors enjoying a morning stroll — Wander works for everyone.</p>
+      </div>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card animate-fade-up">
+          <div class="stars">★★★★★</div>
+          <blockquote>
+            "Wander completely changed how I train. The elevation data and heart rate zones helped me shave 12 minutes off my race walk time in just 8 weeks. The route mapping is insanely accurate — it even detects trail switchbacks. This is the only walking app serious athletes need."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #22c55e, #16a34a)">MR</div>
+            <div class="author-info">
+              <strong>Marcus Rivera</strong>
+              <span>Competitive Race Walker · Olympic hopeful · Chicago, IL</span>
+            </div>
+            <div class="author-badge athlete">🏅 Athlete</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card animate-fade-up delay-1">
+          <div class="stars">★★★★★</div>
+          <blockquote>
+            "My doctor recommended I walk 30 minutes a day. Wander makes it so easy to follow through — I love the gentle reminders and seeing my streaks grow. The heart rate alerts give me confidence that I'm not pushing too hard. At 72, this app has genuinely improved my quality of life."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #06b6d4, #0284c7)">EH</div>
+            <div class="author-info">
+              <strong>Eleanor Hayes</strong>
+              <span>Retired Teacher · Daily Walker · Portland, OR</span>
+            </div>
+            <div class="author-badge senior">🌸 Senior</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card animate-fade-up delay-2">
+          <div class="stars">★★★★★</div>
+          <blockquote>
+            "I work from home and was barely moving. Wander's hourly reminders and fun goal streaks got me off the couch. I've lost 18 pounds in 5 months just by hitting my daily step goals. The sleep tracking was a bonus — I had no idea how much sleep was affecting my energy levels!"
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #f97316, #ea580c)">JP</div>
+            <div class="author-info">
+              <strong>Jamie Park</strong>
+              <span>Software Developer · Remote Worker · Austin, TX</span>
+            </div>
+            <div class="author-badge everyday">⭐ Everyday Walker</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="trust-bar animate-fade-up">
+        <div class="trust-item">
+          <span class="trust-number">500K+</span>
+          <span class="trust-label">Happy Users</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-number">4.9/5</span>
+          <span class="trust-label">App Store Rating</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-number">2.4B</span>
+          <span class="trust-label">Steps Logged</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-number">98%</span>
+          <span class="trust-label">Would Recommend</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq" id="faq">
+    <div class="container faq-container">
+      <div class="section-header animate-fade-up">
+        <div class="section-tag">FAQ</div>
+        <h2 class="section-title">Got <span class="gradient-text">questions?</span></h2>
+        <p class="section-subtitle">Everything you need to know about Wander.</p>
+      </div>
+
+      <div class="faq-list animate-fade-up">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What devices and platforms does Wander support?</span>
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Wander is available on iOS (iPhone and Apple Watch) and Android (phones and Wear OS smartwatches). We sync seamlessly with Apple Health, Google Fit, Fitbit, Garmin, and most popular fitness platforms. A web dashboard is also available for viewing detailed analytics on desktop.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Is Wander suitable for seniors or people with health conditions?</span>
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. Wander was designed with accessibility at its core — large text options, high-contrast mode, and simple navigation make it easy for seniors and those with visual impairments. The heart rate zone alerts are especially useful for those managing cardiovascular conditions. Always consult your doctor before starting a new fitness routine.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Does Wander work without an internet connection?</span>
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! All core tracking features — steps, distance, heart rate, and elevation — work fully offline. Your data syncs automatically to the cloud once you reconnect. This makes Wander perfect for remote trails, national parks, or anywhere with spotty signal.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How accurate is the step counter and GPS tracking?</span>
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Our step algorithm has been independently tested at 97.3% accuracy compared to manual counts, outperforming major competitors. GPS route tracking achieves ±2 meter precision using a combination of device GPS, Wi-Fi triangulation, and barometric altitude sensing. We continuously improve accuracy through machine learning on anonymized movement patterns.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I cancel or change my plan at any time?</span>
+            <span class="faq-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, completely. Upgrade, downgrade, or cancel your plan any time directly from the app — no phone calls, no hoops to jump through. If you cancel a paid plan, you'll keep your Pro or Business features until the end of your current billing period, then seamlessly move to the Free tier. Your data is always yours and remains accessible.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="cta-banner">
+    <div class="cta-bg-shapes">
+      <div class="cta-shape-1"></div>
+      <div class="cta-shape-2"></div>
+    </div>
+    <div class="container cta-content animate-fade-up">
+      <div class="cta-icon">🚶‍♂️</div>
+      <h2>Ready to take your first step?</h2>
+      <p>Join 500,000+ walkers who've already transformed their health with Wander. Start free today — no credit card needed.</p>
+      <div class="cta-actions">
+        <a href="#pricing" class="btn btn-white btn-large">Start Free Today</a>
+        <a href="#features" class="btn btn-ghost-white btn-large">Learn More</a>
+      </div>
+      <div class="app-badges">
+        <div class="app-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          App Store
+        </div>
+        <div class="app-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M3.18 23.76a2 2 0 0 0 2.73.73l9.98-5.76-2.71-2.71zM20.44 10.69l-2.83-1.63L14.7 12l3.08 3.08 2.66-1.54a1.998 1.998 0 0 0 0-2.85zM2 2.47v19.06l10-10zm10.74.79L3.18.25a2 2 0 0 0-1.18.2v.02l10 10z"/></svg>
+          Google Play
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo footer-logo">
+            <div class="logo-icon">
+              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 28 C10 28 8 20 12 16 C14 14 16 14 18 12 C21 9 20 4 20 4" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="21" cy="6" r="3" fill="white"/>
+                <path d="M12 28 L14 22 L18 24 L22 18 L26 20" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span>Wander</span>
+          </a>
+          <p class="footer-tagline">Walk further. Live better. Track smarter. Your journey, beautifully measured.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#">Changelog</a></li>
+            <li><a href="#">Roadmap</a></li>
+            <li><a href="#">Download</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press Kit</a></li>
+            <li><a href="#">Partners</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Status</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">GDPR</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Wander Technologies, Inc. All rights reserved.</p>
+        <p class="footer-made">Made with ❤️ for walkers everywhere</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
