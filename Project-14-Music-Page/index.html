@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Djembe — The Rhythm of African Music Worldwide</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============================================================ NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <div class="logo-svg">
+          <svg class="logo-eq" viewBox="0 0 37 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect class="eq-bar eq-bar--1" x="0"  y="12" width="5" height="14" rx="2.5" fill="#0068A8"/>
+            <rect class="eq-bar eq-bar--2" x="8"  y="6"  width="5" height="20" rx="2.5" fill="#0068A8"/>
+            <rect class="eq-bar eq-bar--3" x="16" y="0"  width="5" height="26" rx="2.5" fill="#C8A84B"/>
+            <rect class="eq-bar eq-bar--4" x="24" y="8"  width="5" height="18" rx="2.5" fill="#00AAFF"/>
+            <rect class="eq-bar eq-bar--5" x="32" y="14" width="5" height="12" rx="2.5" fill="#0068A8"/>
+          </svg>
+        </div>
+        <span class="logo-text">Djembe</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#releases" class="nav-link">New Releases</a></li>
+        <li><a href="#artists" class="nav-link">Artists</a></li>
+        <li><a href="#news" class="nav-link">News</a></li>
+        <li><a href="#charts" class="nav-link">Charts</a></li>
+        <li><a href="#events" class="nav-link">Events</a></li>
+      </ul>
+      <button class="nav-cta">Listen Now</button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================================ HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-orb hero-orb--1"></div>
+    <div class="hero-orb hero-orb--2"></div>
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          Live Updates — March 2026
+        </div>
+        <h1 class="hero-title">
+          <span class="line-reveal" data-line="1">The Rhythm</span>
+          <span class="line-reveal gold-text" data-line="2">of African Music</span>
+          <span class="line-reveal" data-line="3">Worldwide</span>
+        </h1>
+        <p class="hero-sub">
+          Your ultimate source for Afrobeats, Amapiano, African Diaspora, French Rap, UK Rap, and Pop. Stay ahead of every drop.
+        </p>
+        <div class="hero-actions">
+          <a href="#releases" class="btn btn--primary">Explore Releases</a>
+          <a href="#charts" class="btn btn--ghost">View Charts</a>
+        </div>
+        <div class="hero-genres">
+          <span class="genre-pill">Afrobeats</span>
+          <span class="genre-pill">Amapiano</span>
+          <span class="genre-pill">UK Rap</span>
+          <span class="genre-pill">French Rap</span>
+          <span class="genre-pill">Afro Pop</span>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="featured-card">
+          <div class="featured-card__badge">⭐ Featured Artist</div>
+          <div class="featured-card__img-wrap">
+            <div class="featured-card__img">
+              <div class="fc-placeholder fc-placeholder--burna">
+                <div class="fc-placeholder__initials">BB</div>
+                <img
+                  src="images/Burna-Boy.jpg"
+                  alt="Burna Boy"
+                  class="fc-photo"
+                  loading="eager"
+                  onerror="this.classList.add('img-error')"
+                />
+                <div class="fc-placeholder__shimmer"></div>
+                <div class="fc-placeholder__overlay">
+                  <div class="fc-placeholder__artist-row">
+                    <span class="fc-placeholder__flag">🇳🇬</span>
+                    <span class="fc-placeholder__artist-name">Burna Boy</span>
+                  </div>
+                  <span class="fc-placeholder__genre">Afrobeats</span>
+                </div>
+              </div>
+              <div class="featured-card__playing">
+                <div class="bar-wave">
+                  <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <span>Now Trending</span>
+              </div>
+            </div>
+          </div>
+          <div class="featured-card__info">
+            <h3>Burna Boy</h3>
+            <p class="featured-card__genre">🇳🇬 Afrobeats / Afro-Fusion</p>
+            <p class="featured-card__release">Latest: <strong>No Sign of Weakness</strong></p>
+            <div class="featured-card__stats">
+              <div class="stat">
+                <span class="stat__num">42M</span>
+                <span class="stat__label">Monthly Listeners</span>
+              </div>
+              <div class="stat">
+                <span class="stat__num">#1</span>
+                <span class="stat__label">Chart Position</span>
+              </div>
+              <div class="stat">
+                <span class="stat__num">8</span>
+                <span class="stat__label">Albums</span>
+              </div>
+            </div>
+            <button class="btn btn--primary btn--sm">Follow Artist</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll to explore</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================ NEW RELEASES -->
+  <section class="section" id="releases">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">🎵 Fresh Drops</div>
+        <h2 class="section-title">New <span class="gold-text">Releases</span></h2>
+        <p class="section-sub">The hottest albums and singles dropping this week</p>
+      </div>
+      <div class="releases-grid">
+
+        <!-- Card 1 -->
+        <article class="release-card" data-animate>
+          <div class="release-card__cover">
+            <div class="cover-art cover-art--1">
+              <span>WT</span>
+              <div class="cover-overlay">
+                <button class="play-btn" aria-label="Play">▶</button>
+              </div>
+            </div>
+            <span class="release-type">Album</span>
+          </div>
+          <div class="release-card__info">
+            <div class="release-card__genre-tag release-card__genre-tag--afrobeats">Afrobeats</div>
+            <h3 class="release-card__title">Timeless</h3>
+            <p class="release-card__artist">Wizkid</p>
+            <p class="release-card__date">📅 March 14, 2026</p>
+            <div class="streaming-links">
+              <a href="#" class="stream-btn stream-btn--spotify" aria-label="Spotify">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+              </a>
+              <a href="#" class="stream-btn stream-btn--apple" aria-label="Apple Music">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.994 6.124a9.23 9.23 0 0 0-.24-2.19c-.317-1.31-1.048-2.31-2.22-2.99-.403-.23-.ParseFloat-.009-.869-.12-.265-.057-.534-.086-.804-.095-.144-.006-.288-.013-.432-.013H9.57c-.144 0-.288.007-.432.013-.27.009-.54.038-.804.095-.27.053-.534.131-.787.234-.754.308-1.34.773-1.755 1.406-.415.633-.617 1.357-.617 2.16 0 .07.002.14.005.21v11.762c-.003.07-.005.14-.005.21 0 .803.202 1.527.617 2.16.415.633 1.001 1.098 1.755 1.406.253.103.517.18.787.234.264.057.534.086.804.095.144.006.288.013.432.013h10.86c.144 0 .288-.007.432-.013.27-.009.54-.038.804-.095.27-.053.534-.131.787-.234.754-.308 1.34-.773 1.755-1.406.415-.633.617-1.357.617-2.16 0-.07-.002-.14-.005-.21V6.334c.003-.07.005-.14.005-.21zm-6.857 3.239l-3.06 5.462a.48.48 0 0 1-.432.253.48.48 0 0 1-.432-.253L10.153 9.363a.476.476 0 0 1 .432-.7h6.12a.476.476 0 0 1 .432.7z"/></svg>
+              </a>
+              <a href="#" class="stream-btn stream-btn--youtube" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="release-card" data-animate>
+          <div class="release-card__cover">
+            <div class="cover-art cover-art--2">
+              <span>DJ</span>
+              <div class="cover-overlay">
+                <button class="play-btn" aria-label="Play">▶</button>
+              </div>
+            </div>
+            <span class="release-type release-type--single">Single</span>
+          </div>
+          <div class="release-card__info">
+            <div class="release-card__genre-tag release-card__genre-tag--amapiano">Amapiano</div>
+            <h3 class="release-card__title">Selema</h3>
+            <p class="release-card__artist">DJ Maphorisa</p>
+            <p class="release-card__date">📅 March 10, 2026</p>
+            <div class="streaming-links">
+              <a href="#" class="stream-btn stream-btn--spotify" aria-label="Spotify"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></a>
+              <a href="#" class="stream-btn stream-btn--apple" aria-label="Apple Music"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm2.5 6.5l-4 2.31V15l4-2.31V8.5z"/></svg></a>
+              <a href="#" class="stream-btn stream-btn--youtube" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="release-card" data-animate>
+          <div class="release-card__cover">
+            <div class="cover-art cover-art--3">
+              <span>AY</span>
+              <div class="cover-overlay">
+                <button class="play-btn" aria-label="Play">▶</button>
+              </div>
+            </div>
+            <span class="release-type">EP</span>
+          </div>
+          <div class="release-card__info">
+            <div class="release-card__genre-tag release-card__genre-tag--french">French Rap</div>
+            <h3 class="release-card__title">Soleil Noir</h3>
+            <p class="release-card__artist">Aya Nakamura</p>
+            <p class="release-card__date">📅 March 7, 2026</p>
+            <div class="streaming-links">
+              <a href="#" class="stream-btn stream-btn--spotify" aria-label="Spotify"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></a>
+              <a href="#" class="stream-btn stream-btn--apple" aria-label="Apple Music"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm2.5 6.5l-4 2.31V15l4-2.31V8.5z"/></svg></a>
+              <a href="#" class="stream-btn stream-btn--youtube" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="release-card" data-animate>
+          <div class="release-card__cover">
+            <div class="cover-art cover-art--4">
+              <span>RM</span>
+              <div class="cover-overlay">
+                <button class="play-btn" aria-label="Play">▶</button>
+              </div>
+            </div>
+            <span class="release-type release-type--single">Single</span>
+          </div>
+          <div class="release-card__info">
+            <div class="release-card__genre-tag release-card__genre-tag--afrobeats">Afrobeats</div>
+            <h3 class="release-card__title">North Star</h3>
+            <p class="release-card__artist">Rema</p>
+            <p class="release-card__date">📅 March 5, 2026</p>
+            <div class="streaming-links">
+              <a href="#" class="stream-btn stream-btn--spotify" aria-label="Spotify"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></a>
+              <a href="#" class="stream-btn stream-btn--apple" aria-label="Apple Music"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm2.5 6.5l-4 2.31V15l4-2.31V8.5z"/></svg></a>
+              <a href="#" class="stream-btn stream-btn--youtube" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="release-card" data-animate>
+          <div class="release-card__cover">
+            <div class="cover-art cover-art--5">
+              <span>TG</span>
+              <div class="cover-overlay">
+                <button class="play-btn" aria-label="Play">▶</button>
+              </div>
+            </div>
+            <span class="release-type">Album</span>
+          </div>
+          <div class="release-card__info">
+            <div class="release-card__genre-tag release-card__genre-tag--afrobeats">Afrobeats</div>
+            <h3 class="release-card__title">Lagos to London</h3>
+            <p class="release-card__artist">Tems</p>
+            <p class="release-card__date">📅 March 3, 2026</p>
+            <div class="streaming-links">
+              <a href="#" class="stream-btn stream-btn--spotify" aria-label="Spotify"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></a>
+              <a href="#" class="stream-btn stream-btn--apple" aria-label="Apple Music"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm2.5 6.5l-4 2.31V15l4-2.31V8.5z"/></svg></a>
+              <a href="#" class="stream-btn stream-btn--youtube" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="release-card" data-animate>
+          <div class="release-card__cover">
+            <div class="cover-art cover-art--6">
+              <span>OB</span>
+              <div class="cover-overlay">
+                <button class="play-btn" aria-label="Play">▶</button>
+              </div>
+            </div>
+            <span class="release-type release-type--single">Single</span>
+          </div>
+          <div class="release-card__info">
+            <div class="release-card__genre-tag release-card__genre-tag--amapiano">Amapiano</div>
+            <h3 class="release-card__title">Piano Night</h3>
+            <p class="release-card__artist">Oxlade</p>
+            <p class="release-card__date">📅 Feb 28, 2026</p>
+            <div class="streaming-links">
+              <a href="#" class="stream-btn stream-btn--spotify" aria-label="Spotify"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></a>
+              <a href="#" class="stream-btn stream-btn--apple" aria-label="Apple Music"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm2.5 6.5l-4 2.31V15l4-2.31V8.5z"/></svg></a>
+              <a href="#" class="stream-btn stream-btn--youtube" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ CHARTS -->
+  <section class="section section--alt" id="charts">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">📊 Weekly</div>
+        <h2 class="section-title">Trending <span class="gold-text">Charts</span></h2>
+        <p class="section-sub">Top 10 most streamed songs this week across all platforms</p>
+      </div>
+      <div class="charts-wrapper">
+        <div class="charts-table">
+          <div class="charts-header">
+            <span>Rank</span>
+            <span>Song / Artist</span>
+            <span>Genre</span>
+            <span>Plays</span>
+            <span>Trend</span>
+          </div>
+
+          <div class="chart-row" data-animate>
+            <div class="chart-rank chart-rank--gold">1</div>
+            <div class="chart-song">
+              <div class="chart-cover chart-cover--1">WT</div>
+              <div>
+                <p class="chart-title">Kese (Feel Good)</p>
+                <p class="chart-artist">Wizkid ft. Tems</p>
+              </div>
+            </div>
+            <span class="chart-genre-tag chart-genre-tag--afrobeats">Afrobeats</span>
+            <span class="chart-plays">58.2M</span>
+            <span class="trend trend--up">▲ 12</span>
+          </div>
+
+          <div class="chart-row" data-animate>
+            <div class="chart-rank chart-rank--silver">2</div>
+            <div class="chart-song">
+              <div class="chart-cover chart-cover--2">BB</div>
+              <div>
+                <p class="chart-title">No Sign of Weakness</p>
+                <p class="chart-artist">Burna Boy</p>
+              </div>
+            </div>
+            <span class="chart-genre-tag chart-genre-tag--fusion">Afro-Fusion</span>
+            <span class="chart-plays">51.7M</span>
+            <span class="trend trend--up">▲ 3</span>
+          </div>
+
+          <div class="chart-row" data-animate>
+            <div class="chart-rank chart-rank--bronze">3</div>
+            <div class="chart-song">
+              <div class="chart-cover chart-cover--3">AN</div>
+              <div>
+                <p class="chart-title">Djadja 2.0</p>
+                <p class="chart-artist">Aya Nakamura</p>
+              </div>
+            </div>
+            <span class="chart-genre-tag chart-genre-tag--french">French Pop</span>
+            <span class="chart-plays">47.3M</span>
+            <span class="trend trend--up">▲ 8</span>
+          </div>
+
+          <div class="chart-row" data-animate>
+            <div class="chart-rank">4</div>
+            <div class="chart-song">
+              <div class="chart-cover chart-cover--4">DC</div>
+              <div>
+                <p class="chart-title">Calm Down Pt. II</p>
+                <p class="chart-artist">Rema & Dave</p>
+              </div>
+            </div>
+            <span class="chart-genre-tag chart-genre-tag--afrobeats">Afrobeats</span>
+            <span class="chart-plays">44.1M</span>
+            <span class="trend trend--down">▼ 1</span>
+          </div>
+
+          <div class="chart-row" data-animate>
+            <div class="chart-rank">5</div>
+            <div class="chart-song">
+              <div class="chart-cover chart-cover--5">LT</div>
+              <div>
+                <p class="chart-title">Water & Rhythm</p>
+                <p class="chart-artist">Little Simz</p>
+              </div>
+            </div>
+            <span class="chart-genre-tag chart-genre-tag--uk">UK Rap</span>
+            <span class="chart-plays">39.8M</span>
+            <span class="trend trend--up">▲ 15</span>
+          </div>
+
+          <div class="chart-row" data-animate>
+            <div class="chart-rank">6</div>
+            <div class="chart-song">
+              <div class="chart-cover chart-cover--6">DM</div>
+              <div>
+                <p class="chart-title">izikhothane</p>
+                <p class="chart-artist">DJ Maphorisa ft. Kabza</p>
+              </div>
+            </div>
+            <span class="chart-genre-tag chart-genre-tag--amapiano">Amapiano</span>
+            <span class="chart-plays">37.2M</span>
+            <span class="trend trend--up">▲ 4</span>
+          </div>
+
+          <div class="chart-row" data-animate>
+            <div class="chart-rank">7</div>
+            <div class="chart-song">
+              <div class="chart-cover chart-cover--7">LD</div>
+              <div>
+                <p class="chart-title">Monde Réel</p>
+                <p class="chart-artist">Laylow</p>
+              </div>
+            </div>
+            <span class="chart-genre-tag chart-genre-tag--french">French Rap</span>
+            <span class="chart-plays">33.6M</span>
+            <span class="trend trend--down">▼ 2</span>
+          </div>
+
+          <div class="chart-row" data-animate>
+            <div class="chart-rank">8</div>
+            <div class="chart-song">
+              <div class="chart-cover chart-cover--8">OX</div>
+              <div>
+                <p class="chart-title">Kulture</p>
+                <p class="chart-artist">Oxlade & Fireboy</p>
+              </div>
+            </div>
+            <span class="chart-genre-tag chart-genre-tag--afrobeats">Afrobeats</span>
+            <span class="chart-plays">30.1M</span>
+            <span class="trend trend--up">▲ 6</span>
+          </div>
+
+          <div class="chart-row" data-animate>
+            <div class="chart-rank">9</div>
+            <div class="chart-song">
+              <div class="chart-cover chart-cover--9">SK</div>
+              <div>
+                <p class="chart-title">Pressure</p>
+                <p class="chart-artist">Skepta ft. Rema</p>
+              </div>
+            </div>
+            <span class="chart-genre-tag chart-genre-tag--uk">UK Rap</span>
+            <span class="chart-plays">27.8M</span>
+            <span class="trend trend--down">▼ 3</span>
+          </div>
+
+          <div class="chart-row" data-animate>
+            <div class="chart-rank">10</div>
+            <div class="chart-song">
+              <div class="chart-cover chart-cover--10">TM</div>
+              <div>
+                <p class="chart-title">Free Mind</p>
+                <p class="chart-artist">Tems</p>
+              </div>
+            </div>
+            <span class="chart-genre-tag chart-genre-tag--afrobeats">Afrobeats</span>
+            <span class="chart-plays">25.4M</span>
+            <span class="trend trend--up">▲ 7</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ ARTIST SPOTLIGHT -->
+  <section class="section" id="artists">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">🌟 Profiles</div>
+        <h2 class="section-title">Artist <span class="gold-text">Spotlight</span></h2>
+        <p class="section-sub">Four artists shaping the sound of the African diaspora</p>
+      </div>
+      <div class="artists-grid">
+
+        <article class="artist-card" data-animate>
+          <div class="artist-card__glow"></div>
+          <div class="artist-img artist-img--1">
+            <div class="artist-img__initials">WK</div>
+            <img
+              src="images/wizkid.jpg"
+              alt="Wizkid"
+              class="artist-img__photo"
+              loading="lazy"
+              onerror="this.classList.add('img-error')"
+            />
+            <div class="artist-img__shimmer"></div>
+            <div class="artist-img__overlay">
+              <div class="artist-img__bottom">
+                <div class="artist-img__name-flag">
+                  <span class="artist-img__flag">🇳🇬</span>
+                  <span class="artist-img__label">Wizkid</span>
+                </div>
+                <span class="artist-img__genre-tag">Afrobeats</span>
+              </div>
+            </div>
+          </div>
+          <div class="artist-card__body">
+            <h3 class="artist-card__name">Wizkid</h3>
+            <p class="artist-card__latest">Latest: <strong>Morayo</strong></p>
+            <div class="artist-card__stats">
+              <div class="mini-stat"><span>38M</span><small>Listeners</small></div>
+              <div class="mini-stat"><span>6</span><small>Albums</small></div>
+            </div>
+            <button class="btn btn--outline btn--sm">Follow</button>
+          </div>
+        </article>
+
+        <article class="artist-card artist-card--featured" data-animate>
+          <div class="artist-card__glow artist-card__glow--gold"></div>
+          <div class="artist-card__featured-badge">🏆 Editor's Pick</div>
+          <div class="artist-img artist-img--2">
+            <div class="artist-img__initials">AS</div>
+            <img
+              src="images/ayra-starr.jpg"
+              alt="Ayra Starr"
+              class="artist-img__photo"
+              loading="lazy"
+              onerror="this.classList.add('img-error')"
+            />
+            <div class="artist-img__shimmer"></div>
+            <div class="artist-img__overlay">
+              <div class="artist-img__bottom">
+                <div class="artist-img__name-flag">
+                  <span class="artist-img__flag">🇳🇬</span>
+                  <span class="artist-img__label">Ayra Starr</span>
+                </div>
+                <span class="artist-img__genre-tag">Afrobeats</span>
+              </div>
+            </div>
+          </div>
+          <div class="artist-card__body">
+            <h3 class="artist-card__name">Ayra Starr</h3>
+            <p class="artist-card__latest">Latest: <strong>The Year I Turned 21</strong></p>
+            <div class="artist-card__stats">
+              <div class="mini-stat"><span>9M</span><small>Listeners</small></div>
+              <div class="mini-stat"><span>2</span><small>Albums</small></div>
+            </div>
+            <button class="btn btn--primary btn--sm">Follow</button>
+          </div>
+        </article>
+
+        <article class="artist-card" data-animate>
+          <div class="artist-card__glow"></div>
+          <div class="artist-img artist-img--3">
+            <div class="artist-img__initials">DV</div>
+            <img
+              src="images/Davido.jpg"
+              alt="Davido"
+              class="artist-img__photo"
+              loading="lazy"
+              onerror="this.classList.add('img-error')"
+            />
+            <div class="artist-img__shimmer"></div>
+            <div class="artist-img__overlay">
+              <div class="artist-img__bottom">
+                <div class="artist-img__name-flag">
+                  <span class="artist-img__flag">🇳🇬</span>
+                  <span class="artist-img__label">Davido</span>
+                </div>
+                <span class="artist-img__genre-tag">Afrobeats</span>
+              </div>
+            </div>
+          </div>
+          <div class="artist-card__body">
+            <h3 class="artist-card__name">Davido</h3>
+            <p class="artist-card__latest">Latest: <strong>5ive</strong></p>
+            <div class="artist-card__stats">
+              <div class="mini-stat"><span>18M</span><small>Listeners</small></div>
+              <div class="mini-stat"><span>5</span><small>Albums</small></div>
+            </div>
+            <button class="btn btn--outline btn--sm">Follow</button>
+          </div>
+        </article>
+
+        <article class="artist-card" data-animate>
+          <div class="artist-card__glow"></div>
+          <div class="artist-img artist-img--4">
+            <div class="artist-img__initials">DM</div>
+            <div class="artist-img__shimmer"></div>
+            <div class="artist-img__overlay">
+              <div class="artist-img__bottom">
+                <div class="artist-img__name-flag">
+                  <span class="artist-img__flag">🇿🇦</span>
+                  <span class="artist-img__label">DJ Maphorisa</span>
+                </div>
+                <span class="artist-img__genre-tag">Amapiano</span>
+              </div>
+            </div>
+            <div class="artist-img__soon">
+              <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                <rect x="1" y="3.5" width="10" height="7" rx="1.2"/>
+                <circle cx="6" cy="7" r="1.6"/>
+                <path d="M4 3.5V3a2 2 0 0 1 4 0v.5"/>
+              </svg>
+              Photo Coming Soon
+            </div>
+          </div>
+          <div class="artist-card__body">
+            <h3 class="artist-card__name">DJ Maphorisa</h3>
+            <p class="artist-card__latest">Latest: <strong>Selema</strong></p>
+            <div class="artist-card__stats">
+              <div class="mini-stat"><span>19M</span><small>Listeners</small></div>
+              <div class="mini-stat"><span>10</span><small>Projects</small></div>
+            </div>
+            <button class="btn btn--outline btn--sm">Follow</button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ NEWS -->
+  <section class="section section--alt" id="news">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">📰 Latest</div>
+        <h2 class="section-title">Music <span class="gold-text">News</span></h2>
+        <p class="section-sub">Breaking stories and updates from the African music world</p>
+      </div>
+      <div class="news-grid">
+
+        <article class="news-card news-card--featured" data-animate>
+          <div class="news-card__img news-card__img--1">
+            <span class="news-card__category">Industry</span>
+          </div>
+          <div class="news-card__body">
+            <p class="news-card__date">March 15, 2026</p>
+            <h3 class="news-card__headline">Afrobeats Dominates Global Streaming — 200% Growth in Europe Reported by Spotify</h3>
+            <p class="news-card__excerpt">New data from Spotify reveals that Afrobeats streams in Europe have surged by over 200% year-on-year, cementing the genre's global takeover.</p>
+            <a href="#" class="news-card__link">Read Full Story →</a>
+          </div>
+        </article>
+
+        <article class="news-card" data-animate>
+          <div class="news-card__img news-card__img--2">
+            <span class="news-card__category">Award</span>
+          </div>
+          <div class="news-card__body">
+            <p class="news-card__date">March 12, 2026</p>
+            <h3 class="news-card__headline">Little Simz Wins Third Mercury Prize — Makes History as First Two-Time Winner</h3>
+            <p class="news-card__excerpt">The North London rapper has made history once again, taking home her third Mercury Prize for her critically acclaimed album "Water & Rhythm."</p>
+            <a href="#" class="news-card__link">Read Full Story →</a>
+          </div>
+        </article>
+
+        <article class="news-card" data-animate>
+          <div class="news-card__img news-card__img--3">
+            <span class="news-card__category news-card__category--tour">Tour</span>
+          </div>
+          <div class="news-card__body">
+            <p class="news-card__date">March 10, 2026</p>
+            <h3 class="news-card__headline">Aya Nakamura Announces Massive 30-City World Tour Starting June 2026</h3>
+            <p class="news-card__excerpt">France's biggest international music export has announced a world tour spanning Europe, North America, West Africa, and the Caribbean.</p>
+            <a href="#" class="news-card__link">Read Full Story →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ EVENTS -->
+  <section class="section" id="events">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">🎪 Live</div>
+        <h2 class="section-title">Upcoming <span class="gold-text">Events</span></h2>
+        <p class="section-sub">Don't miss these unmissable concerts and festivals</p>
+      </div>
+      <div class="events-grid">
+
+        <article class="event-card" data-animate>
+          <div class="event-card__top event-card__top--1">
+            <div class="event-card__date-badge">
+              <span class="event-day">22</span>
+              <span class="event-month">MAR</span>
+            </div>
+            <span class="event-type">Festival</span>
+          </div>
+          <div class="event-card__body">
+            <h3 class="event-card__name">Afronation Portugal 2026</h3>
+            <div class="event-card__meta">
+              <span>📍 Portimão Beach, Portugal</span>
+              <span>🎤 Burna Boy, Wizkid, Tems + 40 Acts</span>
+            </div>
+            <div class="event-card__footer">
+              <div class="event-card__price">
+                <span class="price-from">From</span>
+                <span class="price-amt">€89</span>
+              </div>
+              <button class="btn btn--primary btn--sm">Get Tickets</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="event-card event-card--hot" data-animate>
+          <div class="event-card__top event-card__top--2">
+            <div class="event-card__hot-badge">🔥 Selling Fast</div>
+            <div class="event-card__date-badge">
+              <span class="event-day">05</span>
+              <span class="event-month">APR</span>
+            </div>
+            <span class="event-type">Concert</span>
+          </div>
+          <div class="event-card__body">
+            <h3 class="event-card__name">Aya Nakamura — O2 Arena London</h3>
+            <div class="event-card__meta">
+              <span>📍 The O2, London, UK</span>
+              <span>🎤 Aya Nakamura + Special Guests</span>
+            </div>
+            <div class="event-card__footer">
+              <div class="event-card__price">
+                <span class="price-from">From</span>
+                <span class="price-amt">£55</span>
+              </div>
+              <button class="btn btn--gold btn--sm">Get Tickets</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="event-card" data-animate>
+          <div class="event-card__top event-card__top--3">
+            <div class="event-card__date-badge">
+              <span class="event-day">18</span>
+              <span class="event-month">APR</span>
+            </div>
+            <span class="event-type">Festival</span>
+          </div>
+          <div class="event-card__body">
+            <h3 class="event-card__name">Amapiano World Festival — Jo'burg</h3>
+            <div class="event-card__meta">
+              <span>📍 FNB Stadium, Johannesburg, SA</span>
+              <span>🎤 DJ Maphorisa, Kabza De Small + More</span>
+            </div>
+            <div class="event-card__footer">
+              <div class="event-card__price">
+                <span class="price-from">From</span>
+                <span class="price-amt">R450</span>
+              </div>
+              <button class="btn btn--primary btn--sm">Get Tickets</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo nav-logo--footer">
+            <span class="logo-icon">🥁</span>
+            <span class="logo-text">Djembe</span>
+          </a>
+          <p class="footer-tagline">The heartbeat of African music worldwide. Afrobeats, Amapiano, Diaspora vibes — all in one place.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter/X">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.19 8.19 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links-group">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#releases">New Releases</a></li>
+            <li><a href="#charts">Charts</a></li>
+            <li><a href="#artists">Artists</a></li>
+            <li><a href="#events">Events</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Genres</h4>
+          <ul>
+            <li><a href="#">Afrobeats</a></li>
+            <li><a href="#">Amapiano</a></li>
+            <li><a href="#">French Rap</a></li>
+            <li><a href="#">UK Rap</a></li>
+            <li><a href="#">Afro Pop</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Djembe</a></li>
+            <li><a href="#">Submit Music</a></li>
+            <li><a href="#">Advertise</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Djembe. Made with ❤️ for the African diaspora. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
