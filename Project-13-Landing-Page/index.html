@@ -17,9 +17,22 @@
       <a href="#" class="nav-logo">
         <div class="logo-icon">
           <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 28 C10 28 8 20 12 16 C14 14 16 14 18 12 C21 9 20 4 20 4" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-            <circle cx="21" cy="6" r="3" fill="white"/>
-            <path d="M12 28 L14 22 L18 24 L22 18 L26 20" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Motion lines -->
+            <line x1="2" y1="10" x2="7" y2="10" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/>
+            <line x1="1" y1="15" x2="6" y2="15" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.4"/>
+            <line x1="2" y1="20" x2="7" y2="20" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.25"/>
+            <!-- Head -->
+            <circle cx="22" cy="5" r="3" fill="white"/>
+            <!-- Body -->
+            <path d="M22 8 L20 16" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Arm forward -->
+            <path d="M21 11 L15 14" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Arm back -->
+            <path d="M21 11 L27 9" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Leg forward stride -->
+            <path d="M20 16 L15 22 L11 27" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Leg push-off -->
+            <path d="M20 16 L25 21 L28 26" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <span>Wander</span>
@@ -98,8 +111,8 @@
                     <circle cx="60" cy="60" r="50" fill="none" stroke="url(#ringGrad)" stroke-width="8" stroke-linecap="round" stroke-dasharray="251" stroke-dashoffset="70" transform="rotate(-90 60 60)"/>
                     <defs>
                       <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stop-color="#4ade80"/>
-                        <stop offset="100%" stop-color="#22d3ee"/>
+                        <stop offset="0%" stop-color="#FF6B2B"/>
+                        <stop offset="100%" stop-color="#FF9F1C"/>
                       </linearGradient>
                     </defs>
                   </svg>
@@ -155,7 +168,7 @@
           </div>
           <div class="phone-glow"></div>
           <div class="float-badge badge-steps">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6B2B" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
             <div>
               <span>Steps Goal</span>
               <strong>Achieved! 🎉</strong>
@@ -295,7 +308,17 @@
 
         <div class="pricing-card animate-fade-up">
           <div class="plan-header">
-            <div class="plan-icon">🚶</div>
+            <div class="plan-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="plan-icon-svg">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="url(#bolt)" stroke="url(#bolt)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                  <linearGradient id="bolt" x1="3" y1="2" x2="20" y2="22" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#FF6B2B"/>
+                    <stop offset="100%" stop-color="#FF9F1C"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
             <h3 class="plan-name">Free</h3>
             <div class="plan-price">
               <span class="price-amount" data-monthly="$0" data-annual="$0">$0</span>
@@ -319,7 +342,22 @@
         <div class="pricing-card pricing-popular animate-fade-up delay-1">
           <div class="popular-badge">Most Popular</div>
           <div class="plan-header">
-            <div class="plan-icon">🏃</div>
+            <div class="plan-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="plan-icon-svg">
+                <path d="M12 2c0 0-5 5.5-5 10a5 5 0 0 0 10 0C17 7.5 12 2 12 2z" fill="url(#flame1)" stroke="none"/>
+                <path d="M12 8c0 0-2.5 2.5-2.5 5a2.5 2.5 0 0 0 5 0C14.5 10.5 12 8 12 8z" fill="url(#flame2)" stroke="none"/>
+                <defs>
+                  <linearGradient id="flame1" x1="7" y1="2" x2="17" y2="22" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#FF9F1C"/>
+                    <stop offset="100%" stop-color="#FF6B2B"/>
+                  </linearGradient>
+                  <linearGradient id="flame2" x1="9.5" y1="8" x2="14.5" y2="18" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#FFF4EE"/>
+                    <stop offset="100%" stop-color="#FFD4B8"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
             <h3 class="plan-name">Pro</h3>
             <div class="plan-price">
               <span class="price-amount" data-monthly="$12" data-annual="$10">$12</span>
@@ -343,7 +381,26 @@
 
         <div class="pricing-card animate-fade-up delay-2">
           <div class="plan-header">
-            <div class="plan-icon">🏢</div>
+            <div class="plan-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="plan-icon-svg">
+                <path d="M6 4h12v8a6 6 0 0 1-12 0V4z" fill="url(#trophy1)" stroke="none"/>
+                <path d="M4 4h2v6a2 2 0 0 1-2-2V4z" fill="url(#trophy2)" stroke="none"/>
+                <path d="M20 4h-2v6a2 2 0 0 0 2-2V4z" fill="url(#trophy2)" stroke="none"/>
+                <rect x="9" y="16" width="6" height="3" rx="1" fill="url(#trophy1)"/>
+                <rect x="7" y="19" width="10" height="2.5" rx="1.25" fill="url(#trophy1)"/>
+                <path d="M10 9l1.5 1.5L14 7" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                  <linearGradient id="trophy1" x1="6" y1="4" x2="18" y2="21" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#FF9F1C"/>
+                    <stop offset="100%" stop-color="#FF6B2B"/>
+                  </linearGradient>
+                  <linearGradient id="trophy2" x1="4" y1="4" x2="6" y2="10" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#FFB84D"/>
+                    <stop offset="100%" stop-color="#FF8C42"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
             <h3 class="plan-name">Business</h3>
             <div class="plan-price">
               <span class="price-amount" data-monthly="$29" data-annual="$23">$29</span>
@@ -556,9 +613,15 @@
           <a href="#" class="nav-logo footer-logo">
             <div class="logo-icon">
               <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 28 C10 28 8 20 12 16 C14 14 16 14 18 12 C21 9 20 4 20 4" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
-                <circle cx="21" cy="6" r="3" fill="white"/>
-                <path d="M12 28 L14 22 L18 24 L22 18 L26 20" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="2" y1="10" x2="7" y2="10" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.55"/>
+                <line x1="1" y1="15" x2="6" y2="15" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.4"/>
+                <line x1="2" y1="20" x2="7" y2="20" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity="0.25"/>
+                <circle cx="22" cy="5" r="3" fill="white"/>
+                <path d="M22 8 L20 16" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M21 11 L15 14" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M21 11 L27 9" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M20 16 L15 22 L11 27" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 16 L25 21 L28 26" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
             <span>Wander</span>
