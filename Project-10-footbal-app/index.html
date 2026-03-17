@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>NBA Live App</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div class="app">
+
+      <!-- HEADER -->
+      <header class="header">
+        <div class="header-left">
+          <span class="logo">🏀 NBA Live</span>
+          <span class="season">2024-25 Season</span>
+        </div>
+        <div class="header-right">
+          <span class="live-dot"></span>
+          <span class="live-text">LIVE DATA</span>
+        </div>
+      </header>
+
+      <!-- NAVIGATION TABS -->
+      <nav class="tabs">
+        <button class="tab active" onclick="switchTab('scores', this)">
+          🗓️ Scores
+        </button>
+        <button class="tab" onclick="switchTab('standings', this)">
+          📊 Standings
+        </button>
+        <button class="tab" onclick="switchTab('teams', this)">
+          🏆 Teams
+        </button>
+      </nav>
+
+      <!-- LOADING -->
+      <div class="loading hidden" id="loading">
+        <div class="spinner"></div>
+        <p>Loading NBA data...</p>
+      </div>
+
+      <!-- ERROR -->
+      <div class="error hidden" id="errorMsg"></div>
+
+      <!-- SCORES TAB -->
+      <div class="tab-content" id="scoresTab">
+        <div class="date-nav">
+          <button onclick="changeDate(-1)">← Prev</button>
+          <span id="currentDate"></span>
+          <button onclick="changeDate(1)">Next →</button>
+        </div>
+        <div id="gamesList" class="games-list"></div>
+      </div>
+
+      <!-- STANDINGS TAB -->
+      <div class="tab-content hidden" id="standingsTab">
+        <div class="conference-toggle">
+          <button class="conf-btn active" onclick="showConference('east', this)">
+            Eastern
+          </button>
+          <button class="conf-btn" onclick="showConference('west', this)">
+            Western
+          </button>
+        </div>
+        <div id="standingsList"></div>
+      </div>
+
+      <!-- TEAMS TAB -->
+      <div class="tab-content hidden" id="teamsTab">
+        <div class="search-bar">
+          <input
+            type="text"
+            id="teamSearch"
+            placeholder="Search teams..."
+            oninput="filterTeams()"
+          >
+        </div>
+        <div id="teamsList" class="teams-grid"></div>
+      </div>
+
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

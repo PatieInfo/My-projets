@@ -1,0 +1,251 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  background-color: white;
+  border-radius: 20px;
+  width: 520px;
+  max-width: 100%;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+
+/* ---- SCREENS ---- */
+.screen {
+  padding: 45px 40px;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- START SCREEN ---- */
+.emoji {
+  font-size: 3.5em;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 2em;
+  color: #1a1a2e;
+  margin-bottom: 12px;
+}
+
+p {
+  color: #666;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.info {
+  background-color: #f0f4ff;
+  color: #667eea;
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+/* ---- BUTTONS ---- */
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 14px 35px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.1s, opacity 0.2s;
+}
+
+.btn:hover { opacity: 0.88; }
+.btn:active { transform: scale(0.97); }
+
+.primary {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  width: 100%;
+  margin-top: 15px;
+}
+
+/* ---- QUIZ HEADER ---- */
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.timer {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.timer.urgent {
+  background: linear-gradient(135deg, #e94560, #c73652);
+  animation: pulse 0.5s infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to   { transform: scale(1.1); }
+}
+
+/* ---- PROGRESS BAR ---- */
+.progress-bar {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  height: 8px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 10px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+
+/* ---- QUESTION ---- */
+.question {
+  font-size: 1.15em;
+  font-weight: bold;
+  color: #1a1a2e;
+  margin-bottom: 22px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* ---- OPTIONS ---- */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.option {
+  background-color: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 13px 18px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.95em;
+  color: #333;
+  transition: all 0.2s;
+}
+
+.option:hover {
+  border-color: #667eea;
+  background-color: #f0f4ff;
+}
+
+.option.correct {
+  background-color: #d4edda;
+  border-color: #27ae60;
+  color: #155724;
+}
+
+.option.wrong {
+  background-color: #f8d7da;
+  border-color: #e94560;
+  color: #721c24;
+}
+
+.option.disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* ---- FEEDBACK ---- */
+.feedback {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.9em;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.feedback.correct {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.feedback.wrong {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* ---- RESULTS SCREEN ---- */
+.score-display {
+  font-size: 3.5em;
+  font-weight: bold;
+  color: #667eea;
+  margin: 15px 0;
+}
+
+.score-label {
+  font-size: 0.45em;
+  color: #999;
+  display: block;
+  margin-top: -5px;
+}
+
+.results-message {
+  font-size: 1.05em;
+  margin-bottom: 20px;
+}
+
+.results-breakdown {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.breakdown-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.88em;
+  color: #555;
+}
+
+.breakdown-icon {
+  font-size: 1.1em;
+  margin-top: 1px;
+}

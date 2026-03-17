@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Click Counter</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div class="container">
+
+      <h1>Click Counter</h1>
+      <p class="subtitle">How many times can you click?</p>
+
+      <div class="counter-display">
+        <span id="count">0</span>
+      </div>
+
+      <p class="message" id="message">Start clicking!</p>
+
+      <div class="buttons">
+        <button id="clickBtn" onclick="handleClick()">Click Me!</button>
+        <button id="resetBtn" onclick="handleReset()">Reset</button>
+      </div>
+
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

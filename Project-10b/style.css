@@ -1,0 +1,50 @@
+/* ---- LOGO FALLBACK ---- */
+.team-logo-fallback {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #1a6b2e, #0d4a1f);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1em;
+  color: white;
+}
+
+/* ---- BACK BUTTON ---- */
+.back-btn {
+  background: none;
+  border: 1px solid #2a2a3e;
+  color: #00cc55;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85em;
+  margin-bottom: 12px;
+  transition: all 0.2s;
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.back-btn:hover {
+  background: #1a2a1a;
+  border-color: #00cc55;
+}
+
+/* ---- TOURNAMENT TITLE ---- */
+.tournament-title {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: white;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #2a2a3e;
+}
+
+/* ---- TOURNAMENT ARROW ---- */
+.tournament-arrow {
+  color: #00cc55;
+  font-size: 1.1em;
+}

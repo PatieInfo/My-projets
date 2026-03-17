@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  line-height: 1.7;
+}
+
+/* ---- NAVIGATION ---- */
+nav {
+  background-color: #1a1a2e;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo {
+  color: white;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #e94560;
+}
+
+nav ul li a.active {
+  color: #e94560;
+  font-weight: bold;
+}
+
+/* ---- HERO SECTION ---- */
+.hero {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #e94560;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #c73652;
+}
+
+/* ---- MAIN CONTENT ---- */
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 35px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 25px;
+}
+
+h2 {
+  color: #1a1a2e;
+  margin-bottom: 15px;
+  font-size: 1.6em;
+}
+
+/* ---- CONTACT FORM ---- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input,
+form textarea {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1em;
+  font-family: Arial, sans-serif;
+}
+
+form textarea {
+  height: 130px;
+  resize: vertical;
+}
+
+form button {
+  background-color: #e94560;
+  color: white;
+  border: none;
+  padding: 13px;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #c73652;
+}
+
+/* ---- FOOTER ---- */
+footer {
+  text-align: center;
+  padding: 25px;
+  background-color: #1a1a2e;
+  color: #666;
+  margin-top: 60px;
+}

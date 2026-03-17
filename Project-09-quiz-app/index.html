@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div class="container">
+
+      <!-- START SCREEN -->
+      <div class="screen" id="startScreen">
+        <div class="emoji">🧠</div>
+        <h1>Tech Quiz</h1>
+        <p>Test your knowledge of web development and technology.</p>
+        <p class="info">5 questions · 30 seconds each</p>
+        <button class="btn primary" onclick="startQuiz()">Start Quiz</button>
+      </div>
+
+      <!-- QUIZ SCREEN -->
+      <div class="screen hidden" id="quizScreen">
+        <div class="quiz-header">
+          <span id="questionNumber">Question 1 of 5</span>
+          <span class="timer" id="timer">30</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="question" id="questionText"></div>
+        <div class="options" id="optionsList"></div>
+        <div class="feedback hidden" id="feedback"></div>
+        <button class="btn primary hidden" id="nextBtn" onclick="nextQuestion()">
+          Next Question →
+        </button>
+      </div>
+
+      <!-- RESULTS SCREEN -->
+      <div class="screen hidden" id="resultsScreen">
+        <div class="emoji" id="resultsEmoji">🏆</div>
+        <h1>Quiz Complete!</h1>
+        <div class="score-display">
+          <span id="scoreText">0</span>
+          <span class="score-label">out of 5</span>
+        </div>
+        <p class="results-message" id="resultsMessage"></p>
+        <div class="results-breakdown" id="breakdown"></div>
+        <button class="btn primary" onclick="restartQuiz()">Play Again</button>
+      </div>
+
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+*.env
+config.js
+secrets.js
+.DS_Store
+Thumbs.db
+.vscode/
