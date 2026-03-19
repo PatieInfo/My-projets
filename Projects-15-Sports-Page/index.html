@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ON FIELD — European Football Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════ NAVBAR ══════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <div class="logo-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="30" height="30">
+            <circle cx="50" cy="50" r="46" fill="none" stroke="#ffffff" stroke-width="4"/>
+            <polygon points="50,16 62,27 58,42 50,46 42,42 38,27" fill="#ffffff"/>
+            <polygon points="79,30 87,45 82,59 70,61 63,50 67,36" fill="#ffffff"/>
+            <polygon points="74,75 66,86 53,85 48,73 55,63 68,63" fill="#ffffff"/>
+            <polygon points="32,86 19,85 14,72 21,62 34,62 41,73" fill="#ffffff"/>
+            <polygon points="18,59 13,44 21,30 34,36 37,50 30,61" fill="#ffffff"/>
+          </svg>
+        </div>
+        <span class="logo-text">ON FIELD</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#scores" class="nav-link">Scores</a></li>
+        <li><a href="#standings" class="nav-link">Standings</a></li>
+        <li><a href="#stats" class="nav-link">Stats</a></li>
+        <li><a href="#players" class="nav-link">Players</a></li>
+        <li><a href="#news" class="nav-link">News</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button class="live-btn" id="liveBtn">
+          <span class="live-dot"></span>
+          LIVE
+        </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════ LIVE TICKER ══════════════════ -->
+  <div class="ticker-bar">
+    <div class="ticker-label">
+      <span class="ticker-dot"></span>
+      LIVE
+    </div>
+    <div class="ticker-track">
+      <div class="ticker-content" id="tickerContent">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════ HERO ══════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-container">
+
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-badge ucl">UEFA Champions League</span>
+          <span class="eyebrow-badge round">Quarter-Final · 1st Leg</span>
+        </div>
+        <h1 class="hero-title">Tonight's<br/><span class="hero-highlight">Featured Match</span></h1>
+        <p class="hero-sub">Live from Santiago Bernabéu, Madrid</p>
+
+        <div class="featured-match-card">
+          <div class="fmc-header">
+            <span class="fmc-competition">
+              <i class="fas fa-star"></i> UCL Quarter-Final
+            </span>
+            <span class="fmc-status live-status">
+              <span class="pulse-dot"></span> LIVE 54'
+            </span>
+          </div>
+
+          <div class="fmc-teams">
+            <div class="fmc-team home">
+              <div class="fmc-badge" style="background:linear-gradient(135deg,#FEBE10,#fff);color:#000;">
+                <span>RM</span>
+              </div>
+              <div class="fmc-team-info">
+                <span class="fmc-team-name">Real Madrid</span>
+                <span class="fmc-team-country">Spain</span>
+              </div>
+            </div>
+
+            <div class="fmc-score-block">
+              <div class="fmc-score">1 <span class="score-sep">—</span> 0</div>
+              <div class="fmc-minute">54'</div>
+              <div class="fmc-ht">HT 0-0</div>
+            </div>
+
+            <div class="fmc-team away">
+              <div class="fmc-team-info align-right">
+                <span class="fmc-team-name">Arsenal</span>
+                <span class="fmc-team-country">England</span>
+              </div>
+              <div class="fmc-badge" style="background:linear-gradient(135deg,#EF0107,#9B1B2A);color:#fff;">
+                <span>ARS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="fmc-footer">
+            <span><i class="fas fa-location-dot"></i> Santiago Bernabéu, Madrid</span>
+            <span><i class="fas fa-users"></i> 81,044</span>
+            <span><i class="fas fa-cloud"></i> 18°C Clear</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-stats-panel">
+          <h3 class="panel-title">Match Updates</h3>
+          <div class="match-events" id="matchEvents">
+            <div class="event-item goal">
+              <span class="event-time">54'</span>
+              <div class="event-icon"><i class="fas fa-futbol"></i></div>
+              <div class="event-detail">
+                <span class="event-player">Vinícius Jr.</span>
+                <span class="event-club">Real Madrid</span>
+              </div>
+              <span class="event-score">1–0</span>
+            </div>
+            <div class="event-item yellow">
+              <span class="event-time">47'</span>
+              <div class="event-icon"><i class="fas fa-square"></i></div>
+              <div class="event-detail">
+                <span class="event-player">Partey</span>
+                <span class="event-club">Arsenal</span>
+              </div>
+              <span class="event-score"></span>
+            </div>
+            <div class="event-item sub">
+              <span class="event-time">38'</span>
+              <div class="event-icon"><i class="fas fa-arrows-rotate"></i></div>
+              <div class="event-detail">
+                <span class="event-player">Bellingham → Camavinga</span>
+                <span class="event-club">Real Madrid</span>
+              </div>
+              <span class="event-score"></span>
+            </div>
+          </div>
+
+          <div class="live-possession">
+            <h4>Live Possession</h4>
+            <div class="poss-bar-wrap">
+              <span class="poss-val left">55%</span>
+              <div class="poss-bar">
+                <div class="poss-fill" style="width:55%"></div>
+              </div>
+              <span class="poss-val right">45%</span>
+            </div>
+            <div class="poss-labels">
+              <span>Real Madrid</span><span>Arsenal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════ SCORES ══════════════════ -->
+  <section class="section scores-section" id="scores">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fas fa-calendar-alt gold-icon"></i> Scores
+        </h2>
+        <div class="date-nav">
+          <button class="date-btn" id="prevDay"><i class="fas fa-chevron-left"></i></button>
+          <span class="current-date" id="currentDate">Today, 19 Mar</span>
+          <button class="date-btn" id="nextDay"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+      <div class="scores-container" id="scoresContainer">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ STANDINGS ══════════════════ -->
+  <section class="section standings-section" id="standings">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fas fa-trophy gold-icon"></i> Standings
+        </h2>
+      </div>
+
+      <div class="league-tabs" id="leagueTabs">
+        <button class="tab-btn active" data-league="pl">
+          <span class="tab-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span> PL
+        </button>
+        <button class="tab-btn" data-league="laliga">
+          <span class="tab-flag">🇪🇸</span> LaLiga
+        </button>
+        <button class="tab-btn" data-league="seriea">
+          <span class="tab-flag">🇮🇹</span> Serie A
+        </button>
+        <button class="tab-btn" data-league="bundesliga">
+          <span class="tab-flag">🇩🇪</span> Bundesliga
+        </button>
+        <button class="tab-btn" data-league="ligue1">
+          <span class="tab-flag">🇫🇷</span> Ligue 1
+        </button>
+      </div>
+
+      <div class="standings-wrapper">
+        <div class="standings-legend">
+          <span class="legend-item cl"><span class="legend-dot cl-dot"></span> Champions League</span>
+          <span class="legend-item el"><span class="legend-dot el-dot"></span> Europa League</span>
+          <span class="legend-item rel"><span class="legend-dot rel-dot"></span> Relegation</span>
+        </div>
+        <div class="table-scroll">
+          <table class="standings-table" id="standingsTable">
+            <thead>
+              <tr>
+                <th class="th-pos">#</th>
+                <th class="th-team">Club</th>
+                <th>P</th>
+                <th>W</th>
+                <th>D</th>
+                <th>L</th>
+                <th>GD</th>
+                <th class="th-pts">Pts</th>
+              </tr>
+            </thead>
+            <tbody id="standingsBody">
+              <!-- Populated by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ PLAYERS / TOP SCORERS ══════════════════ -->
+  <section class="section players-section" id="players">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fas fa-shoe-prints gold-icon"></i> Top Scorers
+        </h2>
+        <span class="section-badge">2025/26 Season</span>
+      </div>
+
+      <div class="scorers-grid" id="scorersGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ MATCH STATS ══════════════════ -->
+  <section class="section stats-section" id="stats">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fas fa-chart-bar gold-icon"></i> Match Stats
+        </h2>
+        <div class="match-stat-badge">
+          <span class="pulse-dot small"></span>
+          Real Madrid <span class="stat-score-inline">1 – 0</span> Arsenal
+        </div>
+      </div>
+
+      <div class="match-stats-container">
+        <div class="stat-teams-header">
+          <div class="stat-team-label">
+            <div class="stat-badge" style="background:linear-gradient(135deg,#FEBE10,#fff);color:#000;">RM</div>
+            <span>Real Madrid</span>
+          </div>
+          <div class="stat-divider-label">STATS</div>
+          <div class="stat-team-label right">
+            <span>Arsenal</span>
+            <div class="stat-badge" style="background:linear-gradient(135deg,#EF0107,#9B1B2A);color:#fff;">ARS</div>
+          </div>
+        </div>
+
+        <div class="stats-list" id="statsList">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ NEWS ══════════════════ -->
+  <section class="section news-section" id="news">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <i class="fas fa-newspaper gold-icon"></i> Latest News
+        </h2>
+        <a href="#" class="see-all-link">See all <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="news-grid" id="newsGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ FOOTER ══════════════════ -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo footer-logo">
+          <div class="logo-icon small">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="22" height="22">
+              <circle cx="50" cy="50" r="46" fill="none" stroke="#ffffff" stroke-width="5"/>
+              <polygon points="50,16 62,27 58,42 50,46 42,42 38,27" fill="#ffffff"/>
+              <polygon points="79,30 87,45 82,59 70,61 63,50 67,36" fill="#ffffff"/>
+              <polygon points="74,75 66,86 53,85 48,73 55,63 68,63" fill="#ffffff"/>
+              <polygon points="32,86 19,85 14,72 21,62 34,62 41,73" fill="#ffffff"/>
+              <polygon points="18,59 13,44 21,30 34,36 37,50 30,61" fill="#ffffff"/>
+            </svg>
+          </div>
+          <span class="logo-text">ON FIELD</span>
+        </a>
+        <p class="footer-desc">Your premium destination for live European football scores, standings, stats, and breaking news.</p>
+        <div class="social-icons">
+          <a href="#" class="social-icon" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Leagues</h4>
+          <ul>
+            <li><a href="#">Premier League</a></li>
+            <li><a href="#">La Liga</a></li>
+            <li><a href="#">Serie A</a></li>
+            <li><a href="#">Bundesliga</a></li>
+            <li><a href="#">Ligue 1</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Competitions</h4>
+          <ul>
+            <li><a href="#">Champions League</a></li>
+            <li><a href="#">Europa League</a></li>
+            <li><a href="#">Conference League</a></li>
+            <li><a href="#">FA Cup</a></li>
+            <li><a href="#">Copa del Rey</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Advertise</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 On Field. All rights reserved. Data for illustrative purposes only.</p>
+      <div class="footer-badges">
+        <span class="footer-badge">🏴󠁧󠁢󠁥󠁮󠁧󠁿 PL</span>
+        <span class="footer-badge">🇪🇸 LaLiga</span>
+        <span class="footer-badge">🇮🇹 Serie A</span>
+        <span class="footer-badge">🇩🇪 Bundesliga</span>
+        <span class="footer-badge">🇫🇷 Ligue 1</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
