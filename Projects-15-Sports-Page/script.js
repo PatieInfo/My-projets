@@ -370,27 +370,61 @@ function getTeamAbbr(name) {
    API — FETCH TODAY'S FIXTURES
 ══════════════════════════════════════════════ */
 
-// Top European leagues to filter by (case-insensitive)
-const TOP_LEAGUES = [
-  'premier league','la liga','primera division','primera división',
-  'serie a','bundesliga','ligue 1','champions league','europa league',
-  'conference league','fa cup','copa del rey','dfb pokal','coupe de france'
-];
+/* ── League priority order (lower index = shown first) ──────────────
+   UCL → UEL → Conference → PL → La Liga → Serie A → Bundesliga → Ligue 1
+   Non-European / regional leagues always go to the bottom (priority 99).
+─────────────────────────────────────────────────────────────────── */
+function getLeaguePriority(name) {
+  if (!name) return 99;
+  const n = name.trim();
+  if (/champions league/i.test(n))                   return 0;
+  if (/europa league/i.test(n))                      return 1;
+  if (/conference league/i.test(n))                  return 2;
+  if (/^premier league$/i.test(n))                   return 3;  // exact — excludes "Queensland Premier League"
+  if (/^la liga$|^primera divisi[oó]n$/i.test(n))   return 4;
+  if (/^serie a$/i.test(n))                          return 5;
+  if (/^bundesliga$/i.test(n))                       return 6;
+  if (/^ligue 1$/i.test(n))                          return 7;
+  if (/^fa cup$|^copa del rey$|^dfb.?pokal$|^coupe de france$/i.test(n)) return 8;
+  return 99; // everything else (regional leagues, lower divisions, etc.)
+}
 
 const LEAGUE_FLAGS = [
-  { pattern:/premier league/i,   flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', css:'pl-header'     },
-  { pattern:/la liga|primera/i,  flag:'🇪🇸', css:'laliga-header'  },
-  { pattern:/serie a/i,          flag:'🇮🇹', css:'seriea-header'  },
-  { pattern:/bundesliga/i,       flag:'🇩🇪', css:'bund-header'    },
-  { pattern:/ligue 1/i,          flag:'🇫🇷', css:'ligue1-header'  },
   { pattern:/champions league/i, flag:'🌟', css:'ucl-header'     },
   { pattern:/europa league/i,    flag:'⭐', css:'ucl-header'     },
+  { pattern:/conference league/i,flag:'⭐', css:'ucl-header'     },
+  { pattern:/^premier league$/i, flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', css:'pl-header'     },
+  { pattern:/^la liga$|primera/i,flag:'🇪🇸', css:'laliga-header'  },
+  { pattern:/^serie a$/i,        flag:'🇮🇹', css:'seriea-header'  },
+  { pattern:/^bundesliga$/i,     flag:'🇩🇪', css:'bund-header'    },
+  { pattern:/^ligue 1$/i,        flag:'🇫🇷', css:'ligue1-header'  },
 ];
 
-function isTopLeague(tournamentName) {
+// Returns true only for top European leagues — uses exact/category-aware matching
+// to avoid false positives like "Queensland Premier League" matching "premier league".
+function isTopLeague(tournamentName, categoryName) {
   if (!tournamentName) return false;
-  const lower = tournamentName.toLowerCase();
-  return TOP_LEAGUES.some(t => lower.includes(t));
+  const name = tournamentName.trim();
+  const cat  = (categoryName || '').toLowerCase();
+
+  // UEFA competitions — partial match is safe, names are unique enough
+  if (/champions league/i.test(name))  return true;
+  if (/europa league/i.test(name))     return true;
+  if (/conference league/i.test(name)) return true;
+
+  // English Premier League — must be exact name AND England category
+  if (/^premier league$/i.test(name) && /england/i.test(cat)) return true;
+
+  // Other top-5 domestic leagues — exact name only (guards against regional variants)
+  if (/^la liga$|^primera divisi[oó]n$/i.test(name)) return true;
+  if (/^serie a$/i.test(name))                        return true;
+  if (/^bundesliga$/i.test(name))                     return true;
+  if (/^ligue 1$/i.test(name))                        return true;
+
+  // Major cups
+  if (/^fa cup$|^copa del rey$|^dfb.?pokal$|^coupe de france$/i.test(name)) return true;
+
+  return false;
 }
 
 function getLeagueMeta(name) {
@@ -426,7 +460,8 @@ function processApiEvents(events) {
 
   events.forEach(ev => {
     const tourName = ev.tournament?.name || 'Other';
-    if (!isTopLeague(tourName)) return;
+    const catName  = ev.tournament?.category?.name || '';
+    if (!isTopLeague(tourName, catName)) return;
 
     if (!groups.has(tourName)) {
       const meta = getLeagueMeta(tourName);
@@ -471,14 +506,9 @@ function processApiEvents(events) {
     });
   });
 
-  // Sort: priority leagues first (PL, LaLiga, etc.)
-  const priorityOrder = ['premier league','la liga','primera','champions','serie a','bundesliga','ligue 1'];
+  // Sort by priority: UCL → UEL → PL → La Liga → Serie A → Bundesliga → Ligue 1 → other
   const result = Array.from(groups.values()).filter(g => g.games.length > 0);
-  result.sort((a, b) => {
-    const ai = priorityOrder.findIndex(p => a.league.toLowerCase().includes(p));
-    const bi = priorityOrder.findIndex(p => b.league.toLowerCase().includes(p));
-    return (ai < 0 ? 99 : ai) - (bi < 0 ? 99 : bi);
-  });
+  result.sort((a, b) => getLeaguePriority(a.league) - getLeaguePriority(b.league));
 
   return result.length > 0 ? result : null;
 }
@@ -525,7 +555,11 @@ function renderScores(offset, apiData) {
     dateLabel.textContent = d ? d.label : 'Unknown';
   }
 
-  const leagueGroups = useApi ? matchData : matchData.matches;
+  // Apply priority sort to both API data and fallback hardcoded data
+  const rawGroups = useApi ? matchData : matchData.matches;
+  const leagueGroups = [...rawGroups].sort(
+    (a, b) => getLeaguePriority(a.league) - getLeaguePriority(b.league)
+  );
 
   container.innerHTML = leagueGroups.map((lg, i) => `
     <div class="league-group" style="animation:rowSlideIn 0.35s ease ${i * 0.06}s both">
@@ -732,6 +766,148 @@ function renderNews() {
 }
 
 /* ══════════════════════════════════════════════
+   FEATURED MATCH — PICK & RENDER
+══════════════════════════════════════════════ */
+
+/**
+ * Picks the single most interesting match from a sorted array of league groups.
+ * Priority: live > upcoming, then by league priority (UCL first, others after).
+ * Returns an enriched game object, or null if nothing suitable found.
+ */
+function pickFeaturedMatch(groups) {
+  if (!groups || groups.length === 0) return null;
+
+  // Flatten all games with their parent league metadata
+  const candidates = [];
+  groups.forEach(g => {
+    g.games.forEach(game => {
+      candidates.push({
+        ...game,
+        leagueName:     g.league,
+        leagueFlag:     g.flag,
+        leaguePriority: getLeaguePriority(g.league),
+      });
+    });
+  });
+
+  if (candidates.length === 0) return null;
+
+  // statusScore: live=0, upcoming=1, finished=2  (prefer live, then upcoming)
+  candidates.sort((a, b) => {
+    const statusScore = s => s === 'live' ? 0 : s === 'upcoming' ? 1 : 2;
+    const statusDiff  = statusScore(a.status) - statusScore(b.status);
+    if (statusDiff !== 0) return statusDiff;
+    return a.leaguePriority - b.leaguePriority;
+  });
+
+  return candidates[0];
+}
+
+/**
+ * Replaces the hero featured match card with real data.
+ * Also updates the eyebrow badge and subtitle text.
+ */
+function renderFeaturedMatch(match) {
+  const card = document.getElementById('featuredMatchCard');
+  if (!card || !match) return;
+
+  const isLive     = match.status === 'live';
+  const isFinished = match.status === 'finished';
+  const isUpcoming = match.status === 'upcoming';
+
+  const lightColors = ['#FEBE10','#F8D400','#FDE100','#FDB913','#F5D300','#F7A800','#F5E000','#8EC6E6'];
+  const homeText = lightColors.includes(match.homeBadge) ? '#111' : '#fff';
+  const awayText = lightColors.includes(match.awayBadge) ? '#111' : '#fff';
+
+  // Header status badge
+  let statusHtml;
+  if (isLive) {
+    statusHtml = `<span class="live-status"><span class="pulse-dot"></span> LIVE ${match.time}</span>`;
+  } else if (isFinished) {
+    statusHtml = `<span class="fmc-status-finished"><i class="fas fa-check-circle"></i> Full Time</span>`;
+  } else {
+    statusHtml = `<span class="fmc-status-upcoming"><i class="far fa-clock"></i> ${match.score}</span>`;
+  }
+
+  // Central score / vs
+  let scoreHtml;
+  if (isLive || isFinished) {
+    const [h, a] = match.score.split('–');
+    scoreHtml = (h !== undefined && a !== undefined)
+      ? `${h}<span class="score-sep">—</span>${a}`
+      : match.score;
+  } else {
+    scoreHtml = `<span style="font-size:22px;color:rgba(255,255,255,0.25)">vs</span>`;
+  }
+
+  // Minute / kickoff pill below the score
+  let pillHtml;
+  if (isLive) {
+    pillHtml = `<div class="fmc-minute">${match.time}</div>`;
+  } else if (isUpcoming) {
+    pillHtml = `<div class="fmc-minute" style="background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.55);animation:none">${match.score}</div>`;
+  } else {
+    pillHtml = `<div class="fmc-minute" style="background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.4);animation:none">FT</div>`;
+  }
+
+  const flag = match.leagueFlag || '⚽';
+
+  card.innerHTML = `
+    <div class="fmc-header">
+      <span class="fmc-competition"><i class="fas fa-star"></i> ${match.leagueName}</span>
+      ${statusHtml}
+    </div>
+    <div class="fmc-teams">
+      <div class="fmc-team home">
+        <div class="fmc-badge" style="background:${match.homeBadge};color:${homeText}">
+          <span>${match.homeAbbr}</span>
+        </div>
+        <div class="fmc-team-info">
+          <span class="fmc-team-name">${match.home}</span>
+          <span class="fmc-team-country">${flag} ${match.leagueName}</span>
+        </div>
+      </div>
+      <div class="fmc-score-block">
+        <div class="fmc-score">${scoreHtml}</div>
+        ${pillHtml}
+        <div class="fmc-ht">${isLive ? 'In progress' : isFinished ? 'Full time' : 'Kick-off'}</div>
+      </div>
+      <div class="fmc-team away">
+        <div class="fmc-team-info align-right">
+          <span class="fmc-team-name">${match.away}</span>
+          <span class="fmc-team-country">${flag} ${match.leagueName}</span>
+        </div>
+        <div class="fmc-badge" style="background:${match.awayBadge};color:${awayText}">
+          <span>${match.awayAbbr}</span>
+        </div>
+      </div>
+    </div>
+    <div class="fmc-footer">
+      <span><i class="fas fa-futbol"></i> ${match.leagueName}</span>
+      <span><i class="fas fa-calendar-alt"></i> ${new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}</span>
+      <span><i class="fas fa-signal"></i> ${isLive ? 'In Progress' : isFinished ? 'Finished' : 'Upcoming'}</span>
+    </div>`;
+
+  // Sync the eyebrow badge and hero subtitle
+  const eyebrow = document.querySelector('.eyebrow-badge.ucl');
+  if (eyebrow) eyebrow.textContent = match.leagueName;
+
+  const eyebrowRound = document.querySelector('.eyebrow-badge.round');
+  if (eyebrowRound) {
+    eyebrowRound.textContent = isLive ? 'Live Now' : isFinished ? 'Full Time' : 'Today';
+  }
+
+  const heroSub = document.querySelector('.hero-sub');
+  if (heroSub) {
+    heroSub.innerHTML = isLive
+      ? `<i class="fas fa-signal"></i> Live match in progress`
+      : isUpcoming
+        ? `<i class="fas fa-clock"></i> Kicks off at ${match.score}`
+        : `<i class="fas fa-check"></i> Match ended`;
+  }
+}
+
+/* ══════════════════════════════════════════════
    INTERACTIONS
 ══════════════════════════════════════════════ */
 
@@ -902,14 +1078,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (apiData && apiData.length > 0) {
       setApiStatusBar('live-data', `Live data — ${events.length} fixtures loaded`);
       renderScores(0, apiData);
+      // Pick the most interesting live/upcoming match for the hero card
+      const featured = pickFeaturedMatch(apiData);
+      renderFeaturedMatch(featured);
     } else {
       setApiStatusBar('fallback', 'Showing sample data (no fixtures returned by API for today)');
       renderScores(0, null);
+      // Use fallback data to populate hero card too
+      const featured = pickFeaturedMatch(MATCH_DATES['0'].matches);
+      renderFeaturedMatch(featured);
     }
   } catch (err) {
     console.warn('API fetch failed:', err.message);
     setApiStatusBar('fallback', 'Showing sample data (API unavailable — check key or network)');
     renderScores(0, null);
+    // Fallback hero card from hardcoded sample data
+    const featured = pickFeaturedMatch(MATCH_DATES['0'].matches);
+    renderFeaturedMatch(featured);
   }
 
   // ── 6. Wire date buttons (pass apiData so Today uses live if available) ──

@@ -426,6 +426,19 @@ button { cursor: pointer; border: none; outline: none; background: none; font-fa
 
 .fmc-ht { font-size: 10px; color: var(--text-faint); margin-top: 4px; }
 
+.fmc-status-upcoming {
+  display: flex; align-items: center; gap: 6px;
+  color: rgba(255,255,255,0.55);
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+}
+.fmc-status-finished {
+  display: flex; align-items: center; gap: 6px;
+  color: #4ade80;
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+}
+
 .fmc-footer {
   display: flex; gap: 18px; flex-wrap: wrap;
   padding: 12px 20px;
